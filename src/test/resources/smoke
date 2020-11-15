@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuperTestSuite">
+    <listeners>
+        <listener class-name="com.group2.tests.elements.TestListener"></listener>
+    </listeners>
+
+    <test name="Store Test">
+        <classes>
+
+            <class name="com.group2.tests.elements.TestElements"/>
+        </classes>
+    </test>
+</suite>
