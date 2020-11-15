@@ -18,10 +18,16 @@ import org.testng.annotations.Test;
 @Data
 public class TestElements {
     DropdownPage dropdownPage = new DropdownPage();
+    DownloadFilePage downloadFilePage = new DownloadFilePage();
 
     @Test
     public void dropdownSelectionByIndex(){
         dropdownPage.dropdownSelection(1);
+    }
+
+    @Test
+    public void downloadTxtFile(){
+        downloadFilePage.downloadFile();
     }
 
 }
