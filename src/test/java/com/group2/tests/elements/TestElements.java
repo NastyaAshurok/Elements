@@ -7,7 +7,7 @@ public class TestElements {
     DownloadFilePage downloadFilePage = new DownloadFilePage();
 
     @Test
-    public void dropdownSelectionByIndex(){
+    public void dropdownSelectionByOption(){
         dropdownPage.dropdownSelection("Option 2");
     }
 
