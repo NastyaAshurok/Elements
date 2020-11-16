@@ -1,19 +1,22 @@
 package com.group2.tests.elements;
-import java.io.IOException;
+
+
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
+import java.io.FileNotFoundException;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.files.FileFilters.withExtension;
 
 public class DownloadFilePage {
-    public void downloadFile()  {
-        // System.setProperty("webdriver.somefile.text", "C:\\some-file.txt"); // нужна ли эта строчка?
+    SelenideElement downloadTxtFile = $(By.xpath("//div[@class='example']//a[contains(@href,'download/some-file.txt')]"));
+
+    public void downloadFile() throws FileNotFoundException {
+   /*     // System.setProperty("webdriver.somefile.text", "C:\\some-file.txt"); // нужна ли эта строчка?
         String baseUrl = "https://the-internet.herokuapp.com/download";
         WebDriver driver = new ChromeDriver();
         driver.get(baseUrl);
@@ -29,6 +32,10 @@ public class DownloadFilePage {
             System.out.println(ex.toString());
         }
         driver.close();
-    }
+    } */
+        Configuration.reportsFolder = "C:\\Wget\\";
+        open("https://the-internet.herokuapp.com/download");
+        downloadTxtFile.download(3000, withExtension("txt"));
 
+    }
 }
