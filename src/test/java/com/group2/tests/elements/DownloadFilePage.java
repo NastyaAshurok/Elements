@@ -13,11 +13,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DownloadFilePage {
     public void downloadFile()  {
-        System.setProperty("webdriver.somefile.text", "C:\\some-file.txt");
+        System.setProperty("webdriver.somefile.text", "C:\\some-file.txt"); // нужна ли эта строчка?
         String baseUrl = "https://the-internet.herokuapp.com/download";
         WebDriver driver = new ChromeDriver();
         driver.get(baseUrl);
-        WebElement downloadButton = driver.findElement(By.name("https://the-internet.herokuapp.com/download/some-file.txt"));
+        WebElement downloadButton = driver.findElement(By.name("https://the-internet.herokuapp.com/download/some-file.txt")); //how to find this link?
         String sourceLocation = downloadButton.getAttribute("href");
         String wget_command = "cmd /c C:\\Wget\\wget.exe -P D: --no-check-certificate " + sourceLocation;
 
