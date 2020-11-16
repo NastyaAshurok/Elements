@@ -2,6 +2,8 @@ package com.group2.tests.elements;
 
 import org.testng.annotations.Test;
 
+import java.io.FileNotFoundException;
+
 public class TestElements {
     DropdownPage dropdownPage = new DropdownPage();
     DownloadFilePage downloadFilePage = new DownloadFilePage();
@@ -12,7 +14,7 @@ public class TestElements {
     }
 
     @Test
-    public void downloadTxtFile(){
+    public void downloadTxtFile() throws FileNotFoundException {
         downloadFilePage.downloadFile();
     }
 
