@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DownloadFilePage {
     public void downloadFile()  {
-        System.setProperty("webdriver.somefile.text", "C:\\some-file.txt"); // нужна ли эта строчка?
+        // System.setProperty("webdriver.somefile.text", "C:\\some-file.txt"); // нужна ли эта строчка?
         String baseUrl = "https://the-internet.herokuapp.com/download";
         WebDriver driver = new ChromeDriver();
         driver.get(baseUrl);
