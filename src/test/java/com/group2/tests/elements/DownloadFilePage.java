@@ -14,11 +14,11 @@ import static com.codeborne.selenide.files.FileFilters.withExtension;
 public class DownloadFilePage {
     SelenideElement downloadTxtFile = $(By.xpath("//div[@class='example']//a[contains(@href,'download/some-file.txt')]"));
 
-    public boolean downloadFile(String fileName) throws FileNotFoundException {
+    public String downloadFile(String fileName) throws FileNotFoundException {
         Configuration.reportsFolder = "C:\\Wget\\";
         open("https://the-internet.herokuapp.com/download");
-        downloadTxtFile.download(3000, withExtension("txt"));
-
-        return false;
+        java.io.File downloadedFile = downloadTxtFile.download(3000, withExtension("txt"));
+String downloadedFileName = downloadedFile.getName();
+        return downloadedFileName;
     }
 }
