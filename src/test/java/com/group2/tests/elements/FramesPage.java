@@ -19,7 +19,8 @@ public class FramesPage {
         open("https://the-internet.herokuapp.com/frames");
         iFrameElement.click();
         closePopUpButton.click();
-        switchTo(iFrame); ///???
+        switchTo().frame($(By.id("mce_0_ifr")));
+       // switchTo(iFrame); ///???
         $(textBodyFrame).val(textForInput);
         $(returnValueBackButton).click();
         //textBody.setValue(textForInput);
